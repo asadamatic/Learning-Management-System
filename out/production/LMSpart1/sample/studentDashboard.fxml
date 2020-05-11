@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="parentPane" prefHeight="661.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.StudentDashboard">
+   <children>
+      <Button fx:id="showOS" layoutX="608.0" layoutY="446.0" mnemonicParsing="false" onAction="#OS" text="OS" />
+       <TableView fx:id="marksTable" layoutX="452.0" layoutY="534.0" prefHeight="61.0" prefWidth="602.0">
+           <columns>
+               <TableColumn fx:id="quiz1" prefWidth="75.0" text="Quiz1" />
+               <TableColumn fx:id="quiz2" prefWidth="75.0" text="Quiz2" />
+               <TableColumn fx:id="assignment1" prefWidth="75.0" text="Assignent 1" />
+               <TableColumn fx:id="assignment2" prefWidth="75.0" text="Assignent 2" />
+               <TableColumn fx:id="mids" prefWidth="75.0" text="Mids" />
+               <TableColumn fx:id="finals" prefWidth="75.0" text="Finals" />
+            <TableColumn fx:id="total" prefWidth="75.0" text="Total" />
+            <TableColumn fx:id="grade" prefWidth="75.0" text="Grade" />
+           </columns>
+       </TableView>
+      <Button fx:id="showOOP" layoutX="668.0" layoutY="446.0" mnemonicParsing="false" onAction="#OOP" text="OOP" />
+      <Button fx:id="showDS" layoutX="735.0" layoutY="446.0" mnemonicParsing="false" onAction="#DS" text="DS" />
+      <Button fx:id="showSNS" layoutX="796.0" layoutY="446.0" mnemonicParsing="false" onAction="#SNS" text="SNS" />
+      <Button fx:id="showMNI" layoutX="860.0" layoutY="446.0" mnemonicParsing="false" onAction="#MNI" text="MNI" />
+      <Label fx:id="welcome" layoutX="548.0" layoutY="60.0" />
+      <Label fx:id="subject" layoutX="739.0" layoutY="298.0" />
+      <Button layoutX="69.0" layoutY="595.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+      <TabPane layoutX="446.0" layoutY="173.0" prefHeight="208.0" prefWidth="602.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="issuedBooksTab" onSelectionChanged="#IssuedBooks" text="Issued books">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="issuedBooks" prefHeight="180.0" prefWidth="602.0">
+                           <columns>
+                              <TableColumn fx:id="issuedBookId" prefWidth="116.0" text="BOOK ID" />
+                              <TableColumn fx:id="issuedBookName" prefWidth="343.0" text="Book Name" />
+                              <TableColumn fx:id="issuedBookDate" prefWidth="157.0" text="Issue Date" />
+                           </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab onSelectionChanged="#ReturnedBooks" text="Reutrned Books">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="returnedBooks" layoutY="-1.0" prefHeight="182.0" prefWidth="602.0">
+                           <columns>
+                              <TableColumn fx:id="returnedBookId" prefWidth="78.0" text="BOOK ID" />
+                              <TableColumn fx:id="returnedBookName" prefWidth="315.0" text="Book Name" />
+                              <TableColumn fx:id="returnedIssueDate" prefWidth="107.0" text="Issue Date" />
+                              <TableColumn fx:id="returnedBookDate" prefWidth="101.0" text="Reutrn Date" />
+                           </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

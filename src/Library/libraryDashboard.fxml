@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="parentPane" prefHeight="661.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Library.LibraryDashboard">
+   <children>
+      <TabPane prefHeight="668.0" prefWidth="1142.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab onSelectionChanged="#initialize" text="Books">
+            <content>
+              <AnchorPane fx:id="booksTabPane" minHeight="0.0" minWidth="0.0" prefHeight="49.0" prefWidth="84.0">
+                     <children>
+                        <Button fx:id="issueBook" layoutX="47.0" layoutY="54.0" mnemonicParsing="false" onAction="#issueBook" text="Issue selected Book" />
+                        <Button fx:id="deleteBook" layoutX="43.0" layoutY="118.0" mnemonicParsing="false" onAction="#deleteBook" text="Delete selected Book" />
+                        <Button layoutX="53.0" layoutY="562.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+                        <TextField fx:id="inputId" layoutX="416.0" layoutY="540.0" promptText="Book Id" />
+                        <TextField fx:id="inputName" layoutX="581.0" layoutY="540.0" promptText="Book Name" />
+                        <TextField fx:id="inputCategory" layoutX="762.0" layoutY="540.0" promptText="Book Category" />
+                        <Button fx:id="addBook" layoutX="954.0" layoutY="540.0" mnemonicParsing="false" onAction="#addBook" text="Add" />
+                        <TableView fx:id="books" layoutX="384.0" layoutY="14.0" prefHeight="471.0" prefWidth="688.0">
+                          <columns>
+                            <TableColumn fx:id="bookId" prefWidth="210.0" text="ID" />
+                            <TableColumn fx:id="bookName" prefWidth="264.0" text="Name" />
+                              <TableColumn fx:id="bookCategory" prefWidth="213.0" text="Category" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab onSelectionChanged="#issuedBooks" text="Issuued Books">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="issuedBooks" layoutX="330.0" layoutY="14.0" prefHeight="471.0" prefWidth="633.0">
+                           <columns>
+                              <TableColumn fx:id="issuedBookId" prefWidth="204.0" text="BOOK ID" />
+                              <TableColumn fx:id="issuedStudentId" prefWidth="218.0" text="Student ID" />
+                              <TableColumn fx:id="issueDate" prefWidth="210.0" text="Issue Date" />
+                           </columns>
+                        </TableView>
+                        <Button layoutX="96.0" layoutY="97.0" mnemonicParsing="false" onAction="#ReturnBook" prefHeight="32.0" prefWidth="118.0" text="Book Returned" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab onSelectionChanged="#ReturnedBooks" text="Returned Books">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="returnedBooks" layoutX="330.0" layoutY="14.0" prefHeight="471.0" prefWidth="770.0">
+                           <columns>
+                              <TableColumn fx:id="returnedBookId" prefWidth="190.0" text="BOOK ID" />
+                              <TableColumn fx:id="returnedStudentId" prefWidth="208.0" text="Student ID" />
+                              <TableColumn fx:id="issueDateReturn" prefWidth="182.0" text="Issue Date" />
+                              <TableColumn fx:id="returnDate" prefWidth="188.0" text="Reutrn Date" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="parentPane" prefHeight="661.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.EditTeacher">
+   <children>
+      <TextField fx:id="editName" layoutX="113.0" layoutY="47.0" promptText="name" />
+      <TextField fx:id="editId" disable="true" editable="false" layoutX="113.0" layoutY="118.0" promptText="id" />
+      <TextField fx:id="editEmail" layoutX="113.0" layoutY="198.0" promptText="email" />
+      <TextField fx:id="editAge" layoutX="441.0" layoutY="47.0" promptText="age" />
+      <TextField fx:id="editCourse" layoutX="441.0" layoutY="106.0" promptText="course" />
+      <TextField fx:id="editPassword" layoutX="113.0" layoutY="252.0" promptText="password" />
+      <Button fx:id="updateDone" layoutX="496.0" layoutY="252.0" mnemonicParsing="false" onAction="#done" onKeyPressed="#done" text="Update" />
+      <Button fx:id="backOption" layoutX="646.0" layoutY="312.0" mnemonicParsing="false" onAction="#back" text="Back" />
+   </children>
+</AnchorPane>
